@@ -1,1 +1,0 @@
-c:\users\bas\documents\visual studio 2015\Projects\BoulderDash\BoulderDash\bin\Debug\BoulderDash.exe.config
