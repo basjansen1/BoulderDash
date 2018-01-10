@@ -40,8 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\FieldController.cs" />
+    <Compile Include="Controller\GameController.cs" />
+    <Compile Include="Controller\TimerController.cs" />
+    <Compile Include="Controller\ViewController.cs" />
+    <Compile Include="Model\Explodable.cs" />
+    <Compile Include="Model\Field.cs" />
+    <Compile Include="Model\IGatherable.cs" />
+    <Compile Include="Model\IMovable.cs" />
+    <Compile Include="Model\MortalObject.cs" />
+    <Compile Include="Model\PlayElement.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Shape.cs" />
+    <Compile Include="Model\Slipperable.cs" />
+    <Compile Include="Model\Square.cs" />
+    <Compile Include="Model\Timer.cs" />
+    <Compile Include="Model\TransparentObject.cs" />
+    <Compile Include="Model\Wall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\FileReader.cs" />
+    <Compile Include="View\FieldView.cs" />
+    <Compile Include="View\PlayerView.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
