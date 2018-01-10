@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoulderDashApp", "BoulderDash\BoulderDashApp.csproj", "{5D9B641D-BB9C-4C1F-A748-435C6EA1A989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoulderDashLibrary", "BoulderDashLibrary\BoulderDashLibrary.csproj", "{BDDADA64-ACCE-423A-B18D-4E3B901BFBEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D9B641D-BB9C-4C1F-A748-435C6EA1A989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9B641D-BB9C-4C1F-A748-435C6EA1A989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9B641D-BB9C-4C1F-A748-435C6EA1A989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9B641D-BB9C-4C1F-A748-435C6EA1A989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDADA64-ACCE-423A-B18D-4E3B901BFBEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDADA64-ACCE-423A-B18D-4E3B901BFBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDADA64-ACCE-423A-B18D-4E3B901BFBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDADA64-ACCE-423A-B18D-4E3B901BFBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

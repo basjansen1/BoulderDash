@@ -1,0 +1,5 @@
+c:\users\bas\documents\visual studio 2015\Projects\BoulderDash\BoulderDashLibrary\bin\Debug\BoulderDashLibrary.dll
+c:\users\bas\documents\visual studio 2015\Projects\BoulderDash\BoulderDashLibrary\bin\Debug\BoulderDashLibrary.pdb
+c:\users\bas\documents\visual studio 2015\Projects\BoulderDash\BoulderDashLibrary\obj\Debug\BoulderDashLibrary.csprojResolveAssemblyReference.cache
+c:\users\bas\documents\visual studio 2015\Projects\BoulderDash\BoulderDashLibrary\obj\Debug\BoulderDashLibrary.dll
+c:\users\bas\documents\visual studio 2015\Projects\BoulderDash\BoulderDashLibrary\obj\Debug\BoulderDashLibrary.pdb
