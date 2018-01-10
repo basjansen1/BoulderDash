@@ -13,7 +13,6 @@ namespace BoulderDashLibrary.Controller
         #region fields
         private TimerController _timerController;
         private Field _field;
-        private FileReader _fileReader;
         #endregion
     }
 }
