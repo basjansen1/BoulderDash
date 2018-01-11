@@ -1,2 +1,2 @@
 # BoulderDash
-Made for the course Modelleren 3
+Made for the course Modelleren 3.
