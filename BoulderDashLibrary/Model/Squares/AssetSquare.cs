@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model.Squares
 {
-    public class AssetSquare
+    public class AssetSquare : Square
     {
+        public bool ContainsAsset { get; set; }
+
+        public override bool AddPlayElement(PlayElement e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -16,17 +16,17 @@ namespace BoulderDashLibrary.Model.Squares
         public PlayElement PlayObject { get; set; }
         public char PrintShape { get; set; }
 
-        public bool AddPlayElement(PlayElement e)
+        public virtual bool AddPlayElement(PlayElement e)
         {
             throw new NotImplementedException();
         }
 
-        public bool RemovePlayElement()
+        public virtual bool RemovePlayElement()
         {
             throw new NotImplementedException();
         }
 
-        public bool IsAvailable()
+        public virtual void Print()
         {
             throw new NotImplementedException();
         }
