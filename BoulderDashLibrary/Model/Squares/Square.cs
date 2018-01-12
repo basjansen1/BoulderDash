@@ -8,10 +8,10 @@ namespace BoulderDashLibrary.Model.Squares
 {
     public abstract class Square
     {
-        public object LeftSquare { get; set; }
-        public object RightSquare { get; set; }
-        public object UpSquare { get; set; }
-        public object DownSquare { get; set; }
+        public Square LeftSquare { get; set; }
+        public Square RightSquare { get; set; }
+        public Square UpSquare { get; set; }
+        public Square DownSquare { get; set; }
 
         public PlayElement PlayObject { get; set; }
         public char PrintShape { get; set; }
