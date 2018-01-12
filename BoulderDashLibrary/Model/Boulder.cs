@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoulderDashLibrary.Controller
+namespace BoulderDashLibrary.Model
 {
-    public class TimerController
+    public class Boulder : Slipperable
     {
     }
 }

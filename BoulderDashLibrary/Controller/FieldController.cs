@@ -11,7 +11,6 @@ namespace BoulderDashLibrary.Controller
     public class FieldController
     {
         #region fields
-        private TimerController _timerController;
         private Field _field;
         #endregion
     }

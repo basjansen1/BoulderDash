@@ -42,24 +42,35 @@
   <ItemGroup>
     <Compile Include="Controller\FieldController.cs" />
     <Compile Include="Controller\GameController.cs" />
-    <Compile Include="Controller\TimerController.cs" />
     <Compile Include="Controller\ViewController.cs" />
-    <Compile Include="Model\Explodable.cs" />
+    <Compile Include="Model\Boulder.cs" />
+    <Compile Include="Model\Square\AssetSquare.cs" />
+    <Compile Include="Model\Wall\ExitWall.cs" />
+    <Compile Include="Model\Wall\NormalWall.cs" />
+    <Compile Include="Model\Wall\SteelWall.cs" />
+    <Compile Include="Model\PlayElement\Creature.cs" />
+    <Compile Include="Model\Diamond.cs" />
+    <Compile Include="Model\PlayElement\Enemy.cs" />
     <Compile Include="Model\Field.cs" />
+    <Compile Include="Model\FireFly.cs" />
     <Compile Include="Model\IGatherable.cs" />
     <Compile Include="Model\IMovable.cs" />
+    <Compile Include="Model\PlayElement\Material.cs" />
     <Compile Include="Model\MortalObject.cs" />
-    <Compile Include="Model\PlayElement.cs" />
-    <Compile Include="Model\Player.cs" />
-    <Compile Include="Model\Shape.cs" />
-    <Compile Include="Model\Slipperable.cs" />
-    <Compile Include="Model\Square.cs" />
+    <Compile Include="Model\Square\MudSquare.cs" />
+    <Compile Include="Model\Square\NormalSquare.cs" />
+    <Compile Include="Model\PlayElement\PlayElement.cs" />
+    <Compile Include="Model\PlayElement\Player.cs" />
+    <Compile Include="Model\Replaceable.cs" />
+    <Compile Include="Model\Rockford.cs" />
+    <Compile Include="Model\PlayElement\Slipperable.cs" />
+    <Compile Include="Model\Square\Square.cs" />
     <Compile Include="Model\Timer.cs" />
     <Compile Include="Model\TransparentObject.cs" />
-    <Compile Include="Model\Wall.cs" />
+    <Compile Include="Model\Wall\Wall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\FileReader.cs" />
-    <Compile Include="View\FieldView.cs" />
+    <Compile Include="View\GameView.cs" />
     <Compile Include="View\PlayerView.cs" />
   </ItemGroup>
   <ItemGroup />
