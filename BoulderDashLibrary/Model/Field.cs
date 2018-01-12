@@ -1,4 +1,5 @@
-﻿using BoulderDashLibrary.Utils;
+﻿using BoulderDashLibrary.Model.Squares;
+using BoulderDashLibrary.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,51 @@ namespace BoulderDashLibrary.Model
 
         public Field(int level)
         {
-            foreach(string s in FileReader.ReadFile(level))
+            int currentRow = 0;
+            int currentColum = 0;
+            Square currentSquare = null;
+            string[]rows = FileReader.ReadFile(level);
+
+            foreach(string row in rows)
+            {
+                foreach(char square in row)
+                {
+                    switch (square)
+                    {
+                        case 'R':
+                            currentSquare = new NormalSquare();
+                          //  Player = new Rockford(currentSquare);
+                            break;
+                    }
+                }
+            }
+
+            foreach(string s in rows)
             {
                 Console.WriteLine(s);
             }
         }
 
+        // necassary for printing the field
+        private Square _firstSquare;
+
+        public void PrintField()
+        {
+            Square currentColumnSquare = _firstSquare;
+            Square currentRowSquare = currentColumnSquare;
+
+            while (currentColumnSquare != null)
+            {
+                //  currentRowSquare.Print();
+                if (currentRowSquare.RightSquare != null)
+                {
+                    currentRowSquare = currentRowSquare.RightSquare;
+                } else
+                {
+                    currentColumnSquare = currentColumnSquare.DownSquare;
+                    currentRowSquare = currentColumnSquare;
+                }
+            }
+        }
     }
 }

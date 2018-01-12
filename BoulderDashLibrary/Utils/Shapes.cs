@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Utils
 {
-    public enum Shapes { R, M, B, D, W, S, F, E}
+    public enum Shapes { R, M, B, D, W, S, F, E, X}
 }

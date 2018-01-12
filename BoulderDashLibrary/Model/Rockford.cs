@@ -10,7 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class Rockford : Player
     {
-        public Rockford(Square square, string name, Shapes shape) : base(square, name, shape)
+        public Rockford(Square square) : base(square, "Rockford", Shapes.R)
         {
         }
 

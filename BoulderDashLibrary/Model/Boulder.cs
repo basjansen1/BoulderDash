@@ -10,7 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class Boulder : Slipperable
     {
-        public Boulder(Square square, string name, Shapes shape) : base(square, name, shape)
+        public Boulder(Square square) : base(square, "Boulder", Shapes.B)
         {
         }
 

@@ -10,7 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class SteelWall : Wall
     {
-        public SteelWall(Square square, string name, Shapes shape) : base(square, name, shape)
+        public SteelWall(Square square) : base(square, "Steelwall", Shapes.S)
         {
         }
     }
