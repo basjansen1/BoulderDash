@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoulderDashLibrary.Model
+namespace BoulderDashLibrary.Model.Squares
 {
-    public abstract class TransparentObject
+    public class NormalSquare : Square
     {
     }
 }
