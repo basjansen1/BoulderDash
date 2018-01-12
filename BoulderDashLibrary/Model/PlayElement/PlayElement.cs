@@ -1,4 +1,5 @@
 ﻿using BoulderDashLibrary.Model.Squares;
+using BoulderDashLibrary.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,13 @@ namespace BoulderDashLibrary.Model
     {
         public Square CurrentSquare { get; set; }
         public string Name { get; set; }
-       // public Shape Shape { get; set; }
+        public char Shape { get; set; }
+
+        public PlayElement(Square square, string name, Shapes shape)
+        {
+            CurrentSquare = square;
+            Name = name;
+            Shape = (char) shape;
+        }
     }
 }

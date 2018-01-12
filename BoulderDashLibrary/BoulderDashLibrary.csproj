@@ -56,7 +56,6 @@
     <Compile Include="Model\IGatherable.cs" />
     <Compile Include="Model\IMovable.cs" />
     <Compile Include="Model\PlayElement\Material.cs" />
-    <Compile Include="Model\MortalObject.cs" />
     <Compile Include="Model\Squares\MudSquare.cs" />
     <Compile Include="Model\Squares\NormalSquare.cs" />
     <Compile Include="Model\PlayElement\PlayElement.cs" />
@@ -66,10 +65,10 @@
     <Compile Include="Model\PlayElement\Slipperable.cs" />
     <Compile Include="Model\Squares\Square.cs" />
     <Compile Include="Model\Timer.cs" />
-    <Compile Include="Model\TransparentObject.cs" />
     <Compile Include="Model\Wall\Wall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\FileReader.cs" />
+    <Compile Include="Utils\Shapes.cs" />
     <Compile Include="View\GameView.cs" />
     <Compile Include="View\PlayerView.cs" />
   </ItemGroup>
