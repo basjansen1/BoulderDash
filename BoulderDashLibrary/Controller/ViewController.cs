@@ -9,7 +9,7 @@ namespace BoulderDashLibrary.Controller
 {
     public class ViewController
     {
-        private FieldView _fieldView;
+        private GameView _fieldView;
         private PlayerView _playerView;
 
         public void ShowStartOfGame()

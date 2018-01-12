@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public class Wall
+    public abstract class Material : PlayElement
     {
     }
 }

@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public abstract class Slipperable
+    public class Enemy
     {
-        public void Fall()
-        {
+        private Player _player;
 
+        public void Move()
+        {
+            throw new NotImplementedException();
         }
     }
 }

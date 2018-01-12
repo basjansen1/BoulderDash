@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public abstract class Explodable
+    public class Rockford : Player
     {
     }
 }

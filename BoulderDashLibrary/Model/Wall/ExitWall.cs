@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoulderDashLibrary.View
+namespace BoulderDashLibrary.Model
 {
-    public class FieldView
+    public class ExitWall : SteelWall
     {
     }
 }

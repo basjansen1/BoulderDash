@@ -8,5 +8,11 @@ namespace BoulderDashLibrary.Model
 {
     public abstract class Player
     {
+        public int Points { get; set; }
+
+        public void AddGatherable(IGatherable g)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

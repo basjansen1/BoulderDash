@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public enum Shape
+    public class NormalWall: Wall
     {
-        R, M, B, D, W, S, F, E
     }
 }
