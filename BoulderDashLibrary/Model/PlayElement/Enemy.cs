@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public class Enemy
+    public class Enemy : Creature
     {
         private Player _player;
 

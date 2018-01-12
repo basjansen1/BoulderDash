@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public abstract class Player
+    public abstract class Player : Creature
     {
         public int Points { get; set; }
 
