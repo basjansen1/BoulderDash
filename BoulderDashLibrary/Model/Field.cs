@@ -20,7 +20,6 @@ namespace BoulderDashLibrary.Model
             {
                 Console.WriteLine(s);
             }
-            Console.ReadKey();
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoulderDashLibrary.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace BoulderDash
     {
         static void Main(string[] args)
         {
-            Timer t = new Timer(TimerCallBack, null, 0, 2000);
+            Field Field = new Field(1);
+            System.Threading.Timer t = new System.Threading.Timer(TimerCallBack, null, 0, 2000);
 
             Console.ReadLine();
         }
