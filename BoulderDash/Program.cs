@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoulderDashLibrary.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,9 @@ namespace BoulderDash
     {
         static void Main(string[] args)
         {
-            Timer t = new Timer(TimerCallBack, null, 0, 2000);
+            new GameController().StartGame();
 
             Console.ReadLine();
-        }
-
-        private static void TimerCallBack(Object o)
-        {
-            Console.WriteLine("Datum van vandaag: " + DateTime.Now);
         }
     }
 }

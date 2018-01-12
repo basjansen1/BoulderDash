@@ -13,5 +13,7 @@ namespace BoulderDashLibrary.Model
         public Replaceable(Square square, string name, Shapes shape) : base(square, name, shape)
         {
         }
+
+        public abstract void Replace(PlayElement e);
     }
 }

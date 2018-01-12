@@ -8,5 +8,19 @@ namespace BoulderDashLibrary.View
 {
     public class PlayerView
     {
+        public void PrintAskInput()
+        {
+
+        }
+
+        public void PrintScore()
+        {
+
+        }
+
+        public void PrintTime()
+        {
+
+        }
     }
 }
