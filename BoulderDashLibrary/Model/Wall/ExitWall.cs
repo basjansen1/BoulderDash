@@ -12,7 +12,7 @@ namespace BoulderDashLibrary.Model
     {
         public ExitWall(Square square) : base(square)
         {
-            Shape = (char) Shapes.E;
+            Shape = Shapes.E;
             Name = "ExitWall";
         }
     }

@@ -20,19 +20,27 @@ namespace BoulderDashLibrary.Model
             {
                 case "Right":
                     if (CurrentSquare.RightSquare.PlayObject == null)
+                    {
                         return true;
+                    }
                     break;
                 case "Left":
                     if (CurrentSquare.LeftSquare.PlayObject == null)
+                    {
                         return true;
+                    }
                     break;
                 case "Up":
                     if (CurrentSquare.UpSquare.PlayObject == null)
+                    {
                         return true;
+                    }
                     break;
                 case "Down":
                     if (CurrentSquare.DownSquare.PlayObject == null)
+                    {
                         return true;
+                    }
                     break;
                 default:
                     return false;

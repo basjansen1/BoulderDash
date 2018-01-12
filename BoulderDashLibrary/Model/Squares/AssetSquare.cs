@@ -12,7 +12,8 @@ namespace BoulderDashLibrary.Model.Squares
 
         public override bool AddPlayElement(PlayElement e)
         {
-            throw new NotImplementedException();
+            ContainsAsset = false;
+            return base.AddPlayElement(e);
         }
     }
 }

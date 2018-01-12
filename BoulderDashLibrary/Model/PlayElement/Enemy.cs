@@ -12,14 +12,33 @@ namespace BoulderDashLibrary.Model
     {
         private List<Player> _playerList;
 
-        public Enemy(Square square, string name, Shapes shape, List<Player> playerList) : base(square, name, shape)
+        public Enemy(Square square, string name, Shapes shape) : base(square, name, shape)
         {
-            _playerList = playerList;
+            _playerList = new List<Player>();
+        }
+
+        public void AddPlayer(Player player)
+        {
+            _playerList.Add(player);
+            Console.WriteLine("Added player");
         }
 
         public void Move()
         {
-            throw new NotImplementedException();
+            if (CurrentSquare.LeftSquare.PlayObject is Player
+                || CurrentSquare.RightSquare.PlayObject is Player
+                || CurrentSquare.UpSquare.PlayObject is Player
+                || CurrentSquare.DownSquare.PlayObject is Player)
+            {
+                // dead. Blast radius is 3*3. Remove 3 items from the field.
+            }
+            else
+            {
+                if (CurrentSquare.PlayObject is FireFly)
+                {
+                    
+                }
+            }
         }
     }
 }

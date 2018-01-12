@@ -12,13 +12,13 @@ namespace BoulderDashLibrary.Model
     {
         public Square CurrentSquare { get; set; }
         public string Name { get; set; }
-        public char Shape { get; set; }
+        public Shapes Shape { get; set; }
 
         public PlayElement(Square square, string name, Shapes shape)
         {
             CurrentSquare = square;
             Name = name;
-            Shape = (char) shape;
+            Shape = shape;
         }
     }
 }

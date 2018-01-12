@@ -70,14 +70,30 @@ namespace BoulderDashLibrary.Model
                             playElement = new ExitWall(currentSquare);
                             PlayElements["Exits"].Add(playElement);
                             break;
-                        case 'X':
+                        case ' ':
+                            currentSquare = new NormalSquare();
                             break;
                     }
-                    currentSquare.AddPlayElement(playElement);
+                    if(playElement != null)
+                    {
+                        currentSquare.AddPlayElement(playElement);
+                    }
                     squares[arrayIndex][rowIndex] = currentSquare;
                     rowIndex++;
+                    Console.Write(currentSquare.GetPrintShape());
                 }
                 arrayIndex++;
+                Console.WriteLine();
+            }
+            // assign player to enemies
+            foreach(PlayElement playerElement in PlayElements["Players"])
+            {
+                Player player = (Player)playerElement;
+                foreach (PlayElement enemyElement in PlayElements["Enemies"])
+                {
+                    Enemy enemy = (Enemy)enemyElement;
+                    enemy.AddPlayer(player);
+                }
             }
             return null;
         }

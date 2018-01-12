@@ -10,6 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class Field
     {
+        private PlayGroundFactory _playGroundFactory;
         public List<IGatherable> ToGatherElementsList { get; set; }
         public List<Enemy> EnemieList { get; set; }
         public Player Player { get; set; }
@@ -17,17 +18,8 @@ namespace BoulderDashLibrary.Model
 
         public Field(int level)
         {
-            int currentRow = 0;
-            int currentColum = 0;
-            Square currentSquare = null;
-            string[]rows = FileReader.ReadFile(level);
-
-            
-
-            foreach(string s in rows)
-            {
-                Console.WriteLine(s);
-            }
+            _playGroundFactory = new PlayGroundFactory();
+            _playGroundFactory.CreatePlayGround(FileReader.ReadFile(level));
         }
 
         // necassary for printing the field
