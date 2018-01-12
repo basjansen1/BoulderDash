@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoulderDashLibrary.Model.Square
+namespace BoulderDashLibrary.Model.Squares
 {
     public class AssetSquare
     {
