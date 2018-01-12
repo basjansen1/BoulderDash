@@ -44,7 +44,7 @@
     <Compile Include="Controller\GameController.cs" />
     <Compile Include="Controller\ViewController.cs" />
     <Compile Include="Model\Boulder.cs" />
-    <Compile Include="Model\Square\AssetSquare.cs" />
+    <Compile Include="Model\Squares\AssetSquare.cs" />
     <Compile Include="Model\Wall\ExitWall.cs" />
     <Compile Include="Model\Wall\NormalWall.cs" />
     <Compile Include="Model\Wall\SteelWall.cs" />
@@ -57,14 +57,14 @@
     <Compile Include="Model\IMovable.cs" />
     <Compile Include="Model\PlayElement\Material.cs" />
     <Compile Include="Model\MortalObject.cs" />
-    <Compile Include="Model\Square\MudSquare.cs" />
-    <Compile Include="Model\Square\NormalSquare.cs" />
+    <Compile Include="Model\Squares\MudSquare.cs" />
+    <Compile Include="Model\Squares\NormalSquare.cs" />
     <Compile Include="Model\PlayElement\PlayElement.cs" />
     <Compile Include="Model\PlayElement\Player.cs" />
     <Compile Include="Model\Replaceable.cs" />
     <Compile Include="Model\Rockford.cs" />
     <Compile Include="Model\PlayElement\Slipperable.cs" />
-    <Compile Include="Model\Square\Square.cs" />
+    <Compile Include="Model\Squares\Square.cs" />
     <Compile Include="Model\Timer.cs" />
     <Compile Include="Model\TransparentObject.cs" />
     <Compile Include="Model\Wall\Wall.cs" />

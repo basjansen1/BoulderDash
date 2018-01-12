@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model.Squares
 {
-    public class MudSquare : Model.Squares.AssetSquare
+    public class MudSquare : AssetSquare
     {
     }
 }
