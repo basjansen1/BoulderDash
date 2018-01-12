@@ -67,7 +67,7 @@ namespace BoulderDashLibrary.Model
                 return false;
             else
             {
-                CurrentSquare.UpSquare.AddPlayElement(this);
+                CurrentSquare.DownSquare.AddPlayElement(this);
 
                 CurrentSquare.PlayObject = null;
                 return true;
@@ -80,7 +80,7 @@ namespace BoulderDashLibrary.Model
                 return false;
             else
             {
-                CurrentSquare.UpSquare.AddPlayElement(this);
+                CurrentSquare.LeftSquare.AddPlayElement(this);
 
                 CurrentSquare.PlayObject = null;
                 return true;
@@ -93,7 +93,7 @@ namespace BoulderDashLibrary.Model
                 return false;
             else
             {
-                CurrentSquare.UpSquare.AddPlayElement(this);
+                CurrentSquare.RightSquare.AddPlayElement(this);
 
                 CurrentSquare.PlayObject = null;
                 return true;
