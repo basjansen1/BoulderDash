@@ -10,7 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class FireFly : Enemy
     {
-        public FireFly(Square square, string name, Shapes shape) : base(square, name, shape)
+        public FireFly(Square square) : base(square, "Firefly", Shapes.F)
         {
         }
     }

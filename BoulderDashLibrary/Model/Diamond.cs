@@ -10,7 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class Diamond : Slipperable, IGatherable
     {
-        public Diamond(Square square, string name, Shapes shape) : base(square, name, shape)
+        public Diamond(Square square=) : base(square, "Diamonds", Shapes.D)
         {
         }
 

@@ -10,8 +10,10 @@ namespace BoulderDashLibrary.Model
 {
     public class ExitWall : SteelWall
     {
-        public ExitWall(Square square, string name, Shapes shape) : base(square, name, shape)
+        public ExitWall(Square square) : base(square)
         {
+            Shape = (char) Shapes.E;
+            Name = "ExitWall";
         }
     }
 }
