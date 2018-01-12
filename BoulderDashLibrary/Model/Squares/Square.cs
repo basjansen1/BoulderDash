@@ -14,7 +14,7 @@ namespace BoulderDashLibrary.Model.Squares
         public Square DownSquare { get; set; }
 
         public PlayElement PlayObject { get; set; }
-        public char PrintShape { get; set; }
+        public char _printShape;
 
         public virtual bool AddPlayElement(PlayElement e)
         {

@@ -10,7 +10,7 @@ namespace BoulderDashLibrary.Model
 {
     public class Diamond : Slipperable, IGatherable
     {
-        public Diamond(Square square=) : base(square, "Diamonds", Shapes.D)
+        public Diamond(Square square) : base(square, "Diamonds", Shapes.D)
         {
         }
 
@@ -25,11 +25,6 @@ namespace BoulderDashLibrary.Model
             {
                 throw new NotImplementedException();
             }
-        }
-
-        public override void Replace(PlayElement e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -13,10 +13,5 @@ namespace BoulderDashLibrary.Model
         public Boulder(Square square) : base(square, "Boulder", Shapes.B)
         {
         }
-
-        public override void Replace(PlayElement e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

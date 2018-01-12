@@ -22,19 +22,7 @@ namespace BoulderDashLibrary.Model
             Square currentSquare = null;
             string[]rows = FileReader.ReadFile(level);
 
-            foreach(string row in rows)
-            {
-                foreach(char square in row)
-                {
-                    switch (square)
-                    {
-                        case 'R':
-                            currentSquare = new NormalSquare();
-                          //  Player = new Rockford(currentSquare);
-                            break;
-                    }
-                }
-            }
+            
 
             foreach(string s in rows)
             {

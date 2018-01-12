@@ -92,7 +92,5 @@ namespace BoulderDashLibrary.Model
                 return true;
             }
         }
-
-        public abstract void Replace(PlayElement e);
     }
 }

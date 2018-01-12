@@ -10,18 +10,14 @@ namespace BoulderDashLibrary.Model
 {
     public class Enemy : Creature
     {
-        private Player _player;
+        private List<Player> _playerList;
 
-        public Enemy(Square square, string name, Shapes shape) : base(square, name, shape)
+        public Enemy(Square square, string name, Shapes shape, List<Player> playerList) : base(square, name, shape)
         {
+            _playerList = playerList;
         }
 
         public void Move()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Replace(PlayElement e)
         {
             throw new NotImplementedException();
         }

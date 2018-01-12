@@ -12,6 +12,7 @@ namespace BoulderDashLibrary.Model
     {
         public Player(Square square, string name, Shapes shape) : base(square, name, shape)
         {
+            Points = 0;
         }
 
         public int Points { get; set; }

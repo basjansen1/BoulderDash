@@ -13,10 +13,5 @@ namespace BoulderDashLibrary.Model
         public Rockford(Square square) : base(square, "Rockford", Shapes.R)
         {
         }
-
-        public override void Replace(PlayElement e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
