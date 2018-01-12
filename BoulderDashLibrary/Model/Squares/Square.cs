@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoulderDashLibrary.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace BoulderDashLibrary.Model.Squares
 {
     public abstract class Square
     {
+        #region properties
         public Square LeftSquare { get; set; }
         public Square RightSquare { get; set; }
         public Square UpSquare { get; set; }
@@ -16,6 +18,10 @@ namespace BoulderDashLibrary.Model.Squares
         public PlayElement PlayObject { get; set; }
         public char PrintShape { get; set; }
 
+        public CurrentPlayObjectDirection CurrentDirection { get; set; }
+        #endregion
+
+        #region methods
         public virtual bool AddPlayElement(PlayElement e)
         {
             throw new NotImplementedException();
@@ -30,5 +36,6 @@ namespace BoulderDashLibrary.Model.Squares
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

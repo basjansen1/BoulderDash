@@ -10,20 +10,42 @@ namespace BoulderDashLibrary.Model
 {
     public class Enemy : Creature
     {
-        private Player _player;
-
         public Enemy(Square square, string name, Shapes shape) : base(square, name, shape)
         {
         }
 
         public void Move()
         {
-            throw new NotImplementedException();
+            if (CurrentSquare.LeftSquare.PlayObject is Player
+                || CurrentSquare.RightSquare.PlayObject is Player
+                || CurrentSquare.UpSquare.PlayObject is Player
+                || CurrentSquare.DownSquare.PlayObject is Player)
+            {
+                // dead. Blast radius is 3*3. Remove 3 items from the field.
+            }
+            else
+            {
+                if (CurrentSquare.PlayObject is FireFly)
+                {
+                    switch(CurrentSquare.CurrentDirection)
+                    {
+                        // TODO-> Move object
+                        case CurrentPlayObjectDirection.UP:
+                            break;
+                        case CurrentPlayObjectDirection.DOWN:
+                            break;
+                        case CurrentPlayObjectDirection.LEFT:
+                            break;
+                        case CurrentPlayObjectDirection.RIGHT:
+                            break;
+                    }
+                }
+            }
         }
 
         public override void Replace(PlayElement e)
         {
-            throw new NotImplementedException();
+            CurrentSquare.PlayObject = e;
         }
     }
 }
