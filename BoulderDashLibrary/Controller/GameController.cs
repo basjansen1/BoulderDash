@@ -11,5 +11,29 @@ namespace BoulderDashLibrary.Controller
         #region fields
         private FieldController _fieldController;
         #endregion
+
+        #region properties
+        public int Level { get; set; }
+        #endregion
+
+        #region constructor and methods
+        public GameController()
+        { }
+
+        public void StartGame()
+        {
+            
+        }
+
+        public void DoGame()
+        {
+
+        }
+
+        public void EndGame()
+        {
+
+        }
+        #endregion
     }
 }

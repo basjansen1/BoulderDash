@@ -1,4 +1,9 @@
-﻿using BoulderDashLibrary.Model;
+<<<<<<< HEAD
+using BoulderDashLibrary.Controller;
+using BoulderDashLibrary.Model;
+=======
+﻿using BoulderDashLibrary.Controller;
+>>>>>>> 341be8ec6266f8225312036a49f549e0acb897f1
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +16,9 @@ namespace BoulderDash
     {
         static void Main(string[] args)
         {
-            Field Field = new Field(1);
-            System.Threading.Timer t = new System.Threading.Timer(TimerCallBack, null, 0, 2000);
+            new GameController().StartGame();
 
             Console.ReadLine();
-        }
-
-        private static void TimerCallBack(Object o)
-        {
-            Console.WriteLine("Datum van vandaag: " + DateTime.Now);
         }
     }
 }

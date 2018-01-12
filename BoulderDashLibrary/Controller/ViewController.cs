@@ -1,4 +1,5 @@
-﻿using BoulderDashLibrary.View;
+﻿using BoulderDashLibrary.Model;
+using BoulderDashLibrary.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +10,33 @@ namespace BoulderDashLibrary.Controller
 {
     public class ViewController
     {
-        private GameView _fieldView;
+        private GameView _gameView;
         private PlayerView _playerView;
+
+        public ViewController()
+        {
+            _gameView = new GameView();
+            _playerView = new PlayerView();
+        }
 
         public void ShowStartOfGame()
         {
-            throw new NotImplementedException();
+            _gameView.PrintStartOfGame();
         }
 
         public void ShowEndOfGame()
         {
-            throw new NotImplementedException();
+            _gameView.PrintEndOfGame();
         }
 
-        public void PrintField()
+        public void ShowField(Field field)
         {
-            throw new NotImplementedException();
+            _gameView.PrintField(field);
         }
 
-        public void ShowMenu()
+        public void ShowPlayerStatistics(Player player)
         {
-            throw new NotImplementedException();
+            _playerView.PrintScore();
         }
     }
 }
