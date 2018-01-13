@@ -11,7 +11,6 @@ namespace BoulderDashLibrary.Controller
         #region fields
         private FieldController _fieldController;
         private ViewController _viewController;
-        private object _testvar;
         #endregion
 
         #region properties
@@ -46,7 +45,6 @@ namespace BoulderDashLibrary.Controller
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        _testvar = _fieldController.GetPlayer().CanMove("Up").ToString();
                         _fieldController.GetPlayer().MoveToAbove();
                         _fieldController.UpdateField();
                         break;
