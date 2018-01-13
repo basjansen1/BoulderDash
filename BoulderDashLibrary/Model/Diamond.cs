@@ -18,13 +18,10 @@ namespace BoulderDashLibrary.Model
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return 10;
             }
         }
+
+        public bool Gathered { get; set; }
     }
 }

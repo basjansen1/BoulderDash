@@ -20,6 +20,12 @@ namespace BoulderDashLibrary.Model
         {
             _playGroundFactory = new PlayGroundFactory();
             _firstSquare = _playGroundFactory.CreatePlayGround(FileReader.ReadFile(level));
+            ToGatherElementsList = new List<IGatherable>();
+            EnemieList = new List<Enemy>();
+            _playGroundFactory.PlayElements["Gatherables"].ForEach(g => ToGatherElementsList.Add((IGatherable)g));
+            _playGroundFactory.PlayElements["Enemies"].ForEach(e => EnemieList.Add((Enemy)e));
+            Player = (Player) _playGroundFactory.PlayElements["Players"].First();
+            ExitWall = (ExitWall) _playGroundFactory.PlayElements["Exits"].First();
         }
 
         // necassary for printing the field

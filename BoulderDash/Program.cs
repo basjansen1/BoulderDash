@@ -13,7 +13,7 @@ namespace BoulderDash
         static void Main(string[] args)
         {
             // new GameController().StartGame();
-            Field field = new Field(3);
+            Field field = new Field(1);
             Console.WriteLine("--------------------------------------------------------------");
             field.PrintField();
             Console.ReadLine();
