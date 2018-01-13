@@ -17,6 +17,12 @@ namespace BoulderDashLibrary.Model
             Alive = true;
         }
 
+        public override void Destroy()
+        {
+            Die();
+            base.Destroy();
+        }
+
         public void Die()
         {
             this.Alive = false;

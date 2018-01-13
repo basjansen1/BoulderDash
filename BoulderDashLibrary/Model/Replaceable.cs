@@ -8,7 +8,7 @@ using BoulderDashLibrary.Utils;
 
 namespace BoulderDashLibrary.Model
 {
-    public abstract class Replaceable : PlayElement, IMovable
+    public abstract class Replaceable : PlayElement, IMovable, IDestructable
     {
         public Replaceable(Square square, string name, Shapes shape) : base(square, name, shape)
         {
@@ -47,6 +47,11 @@ namespace BoulderDashLibrary.Model
             }
 
             return false;
+        }
+
+        public virtual void Destroy()
+        {
+            CurrentSquare.RemovePlayElement();
         }
 
         public virtual bool MoveToAbove()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BoulderDashLibrary.Utils;
 
 namespace BoulderDashLibrary.Model.Squares
 {
@@ -17,6 +18,17 @@ namespace BoulderDashLibrary.Model.Squares
                 ContainsAsset = false;
             }
             return base.AddPlayElement(e);
+        }
+
+        public override Shapes GetPrintShape()
+        {
+            if (ContainsAsset)
+            {
+                return base.GetPrintShape();
+            } else
+            {
+                return Shapes.X;
+            }
         }
     }
 }

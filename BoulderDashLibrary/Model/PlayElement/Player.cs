@@ -24,63 +24,45 @@ namespace BoulderDashLibrary.Model
 
         public override bool CanMove(string direction)
         {
-            Square newSquare = null;
+            Square requestedSquare = null;
 
             switch (direction)
             {
                 case "Right":
-                    newSquare = CurrentSquare.RightSquare;
+                    requestedSquare = CurrentSquare.RightSquare;
 
-                    if (newSquare.PlayObject is FireFly)
+                    if (requestedSquare.PlayObject is Boulder)
                     {
-                        base.Die();
-
-                        return false;
+                        Boulder boulder = (Boulder) requestedSquare.PlayObject;
+                        return boulder.MoveToRight();
                     }
-
-                    if (CurrentSquare.RightSquare == null)
-                        return true;
                     break;
                 case "Left":
-                    newSquare = CurrentSquare.LeftSquare;
+                    requestedSquare = CurrentSquare.LeftSquare;
 
-                    if (newSquare.PlayObject is FireFly)
+                    if (requestedSquare.PlayObject is Boulder)
                     {
-                        base.Die();
-
-                        return false;
+                        Boulder boulder = (Boulder)requestedSquare.PlayObject;
+                        return boulder.MoveToLeft();
                     }
-
-                    if (CurrentSquare.LeftSquare == null)
-                        return true;
                     break;
                 case "Up":
-                    newSquare = CurrentSquare.UpSquare;
-                    if (newSquare.PlayObject is FireFly)
-                    {
-                        base.Die();
-
-                        return false;
-                    }
-
-                    if (newSquare == null || !(newSquare.PlayObject is Boulder) || !(newSquare.PlayObject is Wall))
-                        return true;
+                    requestedSquare = CurrentSquare.UpSquare;
                     break;
                 case "Down":
-                    newSquare = CurrentSquare.DownSquare;
-                    if (newSquare.PlayObject is FireFly)
-                    {
-                        base.Die();
-
-                        return false;
-                    }
-
-                    if (newSquare.PlayObject == null || !(newSquare.PlayObject is Boulder) 
-                        || !(newSquare.PlayObject is Wall))
-                        return true;
+                    requestedSquare = CurrentSquare.DownSquare;
                     break;
                 default:
                     return false;
+            }
+
+            if (requestedSquare.PlayObject is IGatherable)
+            {
+                AddGatherable((IGatherable) requestedSquare.PlayObject);
+                return true;
+            } else if (requestedSquare.PlayObject is Creature || requestedSquare.PlayObject is Wall)
+            {
+                return false;
             }
 
             return false;
