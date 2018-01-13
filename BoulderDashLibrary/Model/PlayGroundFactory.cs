@@ -80,13 +80,62 @@ namespace BoulderDashLibrary.Model
                     }
                     squares[arrayIndex][rowIndex] = currentSquare;
                     rowIndex++;
-                    Console.Write(currentSquare.GetPrintShape());
+                    Console.Write(currentSquare.GetPrintShape()); // remove line
                 }
                 arrayIndex++;
-                Console.WriteLine();
+                Console.WriteLine(); // remove line
             }
-            // assign player to enemies
-            foreach(PlayElement playerElement in PlayElements["Players"])
+            AssignPlayersToEnemies();
+            AssignSideSquares(squares);
+            return squares[0][0]; // return first square of the sequence
+        }
+
+        private void AssignSideSquares(Square[][] squares)
+        {
+            for (int arrayIndex = 0; arrayIndex < squares.Length; arrayIndex++)
+            {
+                Square[] previousSquareArray = null;
+                Square[] currentSquareArray = squares[arrayIndex];
+                Square[] nextSquareArray = null;
+
+                if ((arrayIndex -1) >= 0)
+                {
+                    previousSquareArray = squares[arrayIndex - 1];
+                } 
+
+                if ((arrayIndex + 1) != squares.Length)
+                {
+                    nextSquareArray = squares[arrayIndex + 1];
+                }
+
+                for (int rowIndex = 0; rowIndex < currentSquareArray.Length; rowIndex++)
+                {
+                    // assign left square
+                    if ((rowIndex - 1) >= 0)
+                    {
+                        currentSquareArray[rowIndex].LeftSquare = currentSquareArray[rowIndex - 1];
+                    }
+                    // assign right square
+                    if ((rowIndex + 1) != currentSquareArray.Length)
+                    {
+                        currentSquareArray[rowIndex].RightSquare = currentSquareArray[rowIndex + 1];
+                    }
+                    // assign up square
+                    if (previousSquareArray != null && (rowIndex <= previousSquareArray.Length))
+                    {
+                        currentSquareArray[rowIndex].UpSquare = previousSquareArray[rowIndex];
+                    }
+                    // assign down square
+                    if (nextSquareArray != null && (rowIndex <= nextSquareArray.Length))
+                    {
+                        currentSquareArray[rowIndex].DownSquare = nextSquareArray[rowIndex];
+                    }
+                }
+            }
+        }
+        private void AssignPlayersToEnemies()
+        {
+            foreach (PlayElement playerElement in PlayElements["Players"])
             {
                 Player player = (Player)playerElement;
                 foreach (PlayElement enemyElement in PlayElements["Enemies"])
@@ -95,7 +144,6 @@ namespace BoulderDashLibrary.Model
                     enemy.AddPlayer(player);
                 }
             }
-            return null;
         }
     }
 }

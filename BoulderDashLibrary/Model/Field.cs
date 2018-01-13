@@ -19,20 +19,20 @@ namespace BoulderDashLibrary.Model
         public Field(int level)
         {
             _playGroundFactory = new PlayGroundFactory();
-            _playGroundFactory.CreatePlayGround(FileReader.ReadFile(level));
+            _firstSquare = _playGroundFactory.CreatePlayGround(FileReader.ReadFile(level));
         }
 
         // necassary for printing the field
         private Square _firstSquare;
 
-        public void PrintField()
+        public void PrintField() // replace this method to the view, used for testing 
         {
             Square currentColumnSquare = _firstSquare;
             Square currentRowSquare = currentColumnSquare;
 
             while (currentColumnSquare != null)
             {
-                //  currentRowSquare.Print();
+                Console.Write(currentRowSquare.GetPrintShape());
                 if (currentRowSquare.RightSquare != null)
                 {
                     currentRowSquare = currentRowSquare.RightSquare;
@@ -40,6 +40,7 @@ namespace BoulderDashLibrary.Model
                 {
                     currentColumnSquare = currentColumnSquare.DownSquare;
                     currentRowSquare = currentColumnSquare;
+                    Console.WriteLine();
                 }
             }
         }

@@ -20,7 +20,6 @@ namespace BoulderDashLibrary.Model
         public void AddPlayer(Player player)
         {
             _playerList.Add(player);
-            Console.WriteLine("Added player");
         }
 
         public void Move()
