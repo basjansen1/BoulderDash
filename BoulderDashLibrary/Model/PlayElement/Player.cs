@@ -19,7 +19,36 @@ namespace BoulderDashLibrary.Model
 
         public void AddGatherable(IGatherable g)
         {
-            throw new NotImplementedException();
+            Points += g.PointsWorth;
+        }
+
+        public override bool CanMove(string direction)
+        {
+            Square newSquare = null;
+
+            switch (direction)
+            {
+                case "Right":
+                    newSquare = CurrentSquare.RightSquare;
+                    break;
+                case "Left":
+                    newSquare = CurrentSquare.LeftSquare;
+                    break;
+                case "Up":
+                    newSquare = CurrentSquare.UpSquare;
+                    break;
+                case "Down":
+                    newSquare = CurrentSquare.DownSquare;
+                    if (newSquare.PlayObject == null || !(newSquare.PlayObject is Boulder))
+                    {
+                        
+                        return true;
+                    }
+                    break;
+                default:
+                    return false;
+            }
+            return false;
         }
     }
 }

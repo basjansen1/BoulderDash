@@ -14,7 +14,7 @@ namespace BoulderDashLibrary.Model
         {
         }
 
-        public bool CanMove(string direction)
+        public virtual bool CanMove(string direction)
         {
             switch (direction)
             {
@@ -49,7 +49,7 @@ namespace BoulderDashLibrary.Model
             return false;
         }
 
-        public bool MoveToAbove()
+        public virtual bool MoveToAbove()
         {
             if (!CanMove("Up"))
                 return false;
@@ -62,7 +62,7 @@ namespace BoulderDashLibrary.Model
             }
         }
 
-        public bool MoveToBenath()
+        public virtual bool MoveToBenath()
         {
             if (!CanMove("Down"))
                 return false;
@@ -75,7 +75,7 @@ namespace BoulderDashLibrary.Model
             }
         }
 
-        public bool MoveToLeft()
+        public virtual bool MoveToLeft()
         {
             if (!CanMove("Left"))
                 return false;
@@ -88,7 +88,7 @@ namespace BoulderDashLibrary.Model
             }
         }
 
-        public bool MoveToRight()
+        public virtual bool MoveToRight()
         {
             if (!CanMove("Right"))
                 return false;
