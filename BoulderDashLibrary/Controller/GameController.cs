@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Controller
@@ -40,6 +41,18 @@ namespace BoulderDashLibrary.Controller
 
             do
             {
+                if (Level != 1)
+                {
+                    Task mytask = Task.Run(() =>
+                    {
+                        Thread.Sleep(200);
+
+                        // Move the enemy 5 times.
+                        for (int i = 0; i < 5; i++)
+                            _fieldController.GetEnemies().ForEach(e => e.Move());
+                    });
+                }
+
                 keyInfo = Console.ReadKey();
 
                 switch (keyInfo.Key)

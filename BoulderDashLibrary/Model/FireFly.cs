@@ -13,5 +13,20 @@ namespace BoulderDashLibrary.Model
         public FireFly(Square square) : base(square, "Firefly", Shapes.F)
         {
         }
+
+        public override void Move()
+        {
+            //if (CurrentSquare.LeftSquare.PlayObject is Player
+            //        || CurrentSquare.RightSquare.PlayObject is Player
+            //        || CurrentSquare.UpSquare.PlayObject is Player
+            //        || CurrentSquare.DownSquare.PlayObject is Player)
+            //{
+            //    // dead. Blast radius is 3*3. Remove 3 items from the field.
+            //}
+            //else
+            //{
+                
+           //}
+        }
     }
 }

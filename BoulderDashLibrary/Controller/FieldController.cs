@@ -13,6 +13,7 @@ namespace BoulderDashLibrary.Controller
     {
         #region fields
         private Field _field;
+        private int _level;
         #endregion
 
         #region constructor and methods
@@ -23,6 +24,7 @@ namespace BoulderDashLibrary.Controller
 
         public void SetupField(int level)
         {
+            _level = level;
             _field = new Field(level);
         }
 
@@ -34,6 +36,14 @@ namespace BoulderDashLibrary.Controller
         public bool CheckGameOver()
         {
             return true;
+        }
+
+        public List<Enemy> GetEnemies()
+        {
+            if (_level != 1)
+                return _field.EnemieList;
+            else
+                return null;
         }
 
         public Square GetField()
