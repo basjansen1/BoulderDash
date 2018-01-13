@@ -24,8 +24,14 @@ namespace BoulderDashLibrary.Model
             EnemieList = new List<Enemy>();
             _playGroundFactory.PlayElements["Gatherables"].ForEach(g => ToGatherElementsList.Add((IGatherable)g));
             _playGroundFactory.PlayElements["Enemies"].ForEach(e => EnemieList.Add((Enemy)e));
-            Player = (Player) _playGroundFactory.PlayElements["Players"].First();
-            ExitWall = (ExitWall) _playGroundFactory.PlayElements["Exits"].First();
+            if (_playGroundFactory.PlayElements["Players"] != null)
+            {
+                Player = (Player)_playGroundFactory.PlayElements["Players"].First();
+            }
+            if (_playGroundFactory.PlayElements["Exits"] != null)
+            {
+                ExitWall = (ExitWall)_playGroundFactory.PlayElements["Exits"].First();
+            }
         }
 
         // necassary for printing the field

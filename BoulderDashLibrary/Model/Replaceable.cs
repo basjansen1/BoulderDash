@@ -61,8 +61,9 @@ namespace BoulderDashLibrary.Model
             else
             {
                 CurrentSquare.UpSquare.AddPlayElement(this);
+                CurrentSquare.RemovePlayElement();
+                CurrentSquare = CurrentSquare.UpSquare;
 
-                CurrentSquare.PlayObject = null;
                 return true;
             }
         }
@@ -74,8 +75,8 @@ namespace BoulderDashLibrary.Model
             else
             {
                 CurrentSquare.DownSquare.AddPlayElement(this);
-
-                CurrentSquare.PlayObject = null;
+                CurrentSquare.RemovePlayElement();
+                CurrentSquare = CurrentSquare.DownSquare;
                 return true;
             }
         }
@@ -87,8 +88,8 @@ namespace BoulderDashLibrary.Model
             else
             {
                 CurrentSquare.LeftSquare.AddPlayElement(this);
-
-                CurrentSquare.PlayObject = null;
+                CurrentSquare.RemovePlayElement();
+                CurrentSquare = CurrentSquare.LeftSquare;
                 return true;
             }
         }
@@ -100,8 +101,8 @@ namespace BoulderDashLibrary.Model
             else
             {
                 CurrentSquare.RightSquare.AddPlayElement(this);
-
-                CurrentSquare.PlayObject = null;
+                CurrentSquare.RemovePlayElement();
+                CurrentSquare = CurrentSquare.RightSquare;
                 return true;
             }
         }

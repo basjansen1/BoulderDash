@@ -23,7 +23,7 @@ namespace BoulderDashLibrary.Controller
         {
             _fieldController = new FieldController();
             _viewController = new ViewController();
-            Level = 1;
+            Level = 3;
         }
 
         public void StartGame()
@@ -46,7 +46,7 @@ namespace BoulderDashLibrary.Controller
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        _testvar = _fieldController.GetPlayer().CanMove("Up").ToString();
+                        _testvar = _fieldController.GetPlayer().CanMove("Up").ToString(); // remove
                         _fieldController.GetPlayer().MoveToAbove();
                         _fieldController.UpdateField();
                         break;

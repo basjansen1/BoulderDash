@@ -11,6 +11,10 @@ namespace BoulderDashLibrary.Model.Squares
     {
         public bool ContainsAsset { get; set; }
 
+        public AssetSquare()
+        {
+            ContainsAsset = true;
+        }
         public override bool AddPlayElement(PlayElement e)
         {
             if (e is Player)
@@ -24,10 +28,10 @@ namespace BoulderDashLibrary.Model.Squares
         {
             if (ContainsAsset)
             {
-                return base.GetPrintShape();
+                return PlayObject == null ? _printShape : PlayObject.Shape;
             } else
             {
-                return Shapes.X;
+                return PlayObject == null ? Shapes.X : PlayObject.Shape;
             }
         }
     }
