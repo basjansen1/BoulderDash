@@ -35,11 +35,43 @@ namespace BoulderDashLibrary.Controller
         public void DoGame()
         {
             _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer());
+
+            ConsoleKeyInfo keyInfo;
+
+            do
+            {
+                keyInfo = Console.ReadKey();
+
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        Console.WriteLine("up");
+                        _fieldController.UpdateField();
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.WriteLine("down");
+                        _fieldController.UpdateField();
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        Console.WriteLine("left");
+                        _fieldController.UpdateField();
+                        break;
+                    case ConsoleKey.RightArrow:
+                        Console.WriteLine("right");
+                        _fieldController.UpdateField();
+                        break;
+                    case ConsoleKey.R:
+                        break;
+                }
+            }
+            while (keyInfo.Key != ConsoleKey.S || keyInfo.Key != ConsoleKey.R);
         }
 
         public void EndGame()
         {
+            Console.Clear();
 
+            _viewController.ShowEndOfGame();
         }
 
         private void PrepareLevel()
