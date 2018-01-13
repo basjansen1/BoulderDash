@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model.Squares
 {
-    public abstract class Square : IDestructable 
+    public abstract class Square : IDestructable
     {
         #region properties
         public Square LeftSquare { get; set; }
@@ -37,7 +37,8 @@ namespace BoulderDashLibrary.Model.Squares
             if (PlayObject == null)
             {
                 return _printShape;
-            } else
+            }
+            else
             {
                 return PlayObject.Shape;
             }
