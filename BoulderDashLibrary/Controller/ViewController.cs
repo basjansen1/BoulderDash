@@ -1,4 +1,5 @@
 ﻿using BoulderDashLibrary.Model;
+using BoulderDashLibrary.Model.Squares;
 using BoulderDashLibrary.View;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,18 @@ namespace BoulderDashLibrary.Controller
             _gameView.PrintStartOfGame();
         }
 
+        public void ShowGame(Square field, Player player)
+        {
+            _playerView.PrintScore();
+            _gameView.PrintField(field);
+        }
+
         public void ShowEndOfGame()
         {
             _gameView.PrintEndOfGame();
         }
 
-        public void ShowField(Field field)
+        public void ShowField(Square field)
         {
             _gameView.PrintField(field);
         }

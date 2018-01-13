@@ -19,7 +19,7 @@ namespace BoulderDashLibrary.Model
         public Field(int level)
         {
             _playGroundFactory = new PlayGroundFactory();
-            _firstSquare = _playGroundFactory.CreatePlayGround(FileReader.ReadFile(level));
+            FirstSquare = _playGroundFactory.CreatePlayGround(FileReader.ReadFile(level));
             ToGatherElementsList = new List<IGatherable>();
             EnemieList = new List<Enemy>();
             _playGroundFactory.PlayElements["Gatherables"].ForEach(g => ToGatherElementsList.Add((IGatherable)g));
@@ -29,26 +29,26 @@ namespace BoulderDashLibrary.Model
         }
 
         // necassary for printing the field
-        private Square _firstSquare;
+        public Square FirstSquare;
 
         public void PrintField() // replace this method to the view, used for testing 
         {
-            Square currentColumnSquare = _firstSquare;
-            Square currentRowSquare = currentColumnSquare;
+            //Square currentColumnSquare = FirstSquare;
+            //Square currentRowSquare = currentColumnSquare;
 
-            while (currentColumnSquare != null)
-            {
-                Console.Write(currentRowSquare.GetPrintShape());
-                if (currentRowSquare.RightSquare != null)
-                {
-                    currentRowSquare = currentRowSquare.RightSquare;
-                } else
-                {
-                    currentColumnSquare = currentColumnSquare.DownSquare;
-                    currentRowSquare = currentColumnSquare;
-                    Console.WriteLine();
-                }
-            }
+            //while (currentColumnSquare != null)
+            //{
+            //    Console.Write(currentRowSquare.GetPrintShape());
+            //    if (currentRowSquare.RightSquare != null)
+            //    {
+            //        currentRowSquare = currentRowSquare.RightSquare;
+            //    } else
+            //    {
+            //        currentColumnSquare = currentColumnSquare.DownSquare;
+            //        currentRowSquare = currentColumnSquare;
+            //        Console.WriteLine();
+            //    }
+            //}
         }
     }
 }

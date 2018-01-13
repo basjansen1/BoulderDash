@@ -1,4 +1,5 @@
 ﻿using BoulderDashLibrary.Model;
+using BoulderDashLibrary.Model.Squares;
 using BoulderDashLibrary.Utils;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace BoulderDashLibrary.Controller
 
         #region constructor and methods
         public FieldController()
-        { }
+        {
+
+        }
 
         public void SetupField(int level)
         {
-            
+            _field = new Field(level);
         }
 
         public void UpdateField()
@@ -31,6 +34,16 @@ namespace BoulderDashLibrary.Controller
         public bool CheckGameOver()
         {
             return true;
+        }
+
+        public Square GetField()
+        {
+            return _field.FirstSquare;
+        }
+
+        public Player GetPlayer()
+        {
+            return _field.Player;
         }
         #endregion
     }
