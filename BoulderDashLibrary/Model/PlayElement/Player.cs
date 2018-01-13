@@ -65,7 +65,7 @@ namespace BoulderDashLibrary.Model
                 return false;
             }
 
-            return false;
+            return true;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace BoulderDashLibrary.Controller
         #region fields
         private FieldController _fieldController;
         private ViewController _viewController;
+        private object _testvar;
         #endregion
 
         #region properties
@@ -45,26 +46,27 @@ namespace BoulderDashLibrary.Controller
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        Console.WriteLine("up");
+                        _testvar = _fieldController.GetPlayer().CanMove("Up").ToString();
+                        _fieldController.GetPlayer().MoveToAbove();
                         _fieldController.UpdateField();
                         break;
                     case ConsoleKey.DownArrow:
-                        Console.WriteLine("down");
+                        _fieldController.GetPlayer().MoveToBenath();
                         _fieldController.UpdateField();
                         break;
                     case ConsoleKey.LeftArrow:
-                        Console.WriteLine("left");
+                        _fieldController.GetPlayer().MoveToLeft();
                         _fieldController.UpdateField();
                         break;
                     case ConsoleKey.RightArrow:
-                        Console.WriteLine("right");
+                        _fieldController.GetPlayer().MoveToRight();
                         _fieldController.UpdateField();
                         break;
-                    case ConsoleKey.R:
-                        break;
                 }
+
+                _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer());
             }
-            while (keyInfo.Key != ConsoleKey.S || keyInfo.Key != ConsoleKey.R);
+            while (keyInfo.Key != ConsoleKey.S);
         }
 
         public void EndGame()
