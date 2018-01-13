@@ -33,7 +33,7 @@ namespace BoulderDashLibrary.Model
 
                     if (requestedSquare.PlayObject is Boulder)
                     {
-                        Boulder boulder = (Boulder) requestedSquare.PlayObject;
+                        Boulder boulder = (Boulder)requestedSquare.PlayObject;
                         return boulder.MoveToRight();
                     }
                     break;
@@ -58,9 +58,10 @@ namespace BoulderDashLibrary.Model
 
             if (requestedSquare.PlayObject is IGatherable)
             {
-                AddGatherable((IGatherable) requestedSquare.PlayObject);
+                AddGatherable((IGatherable)requestedSquare.PlayObject);
                 return true;
-            } else if (requestedSquare.PlayObject is Creature || requestedSquare.PlayObject is Wall)
+            }
+            else if (requestedSquare.PlayObject is Creature || requestedSquare.PlayObject is Wall)
             {
                 return false;
             }

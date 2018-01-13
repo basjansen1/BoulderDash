@@ -8,7 +8,7 @@ using BoulderDashLibrary.Utils;
 
 namespace BoulderDashLibrary.Model
 {
-    public class Enemy : Creature
+    public abstract class Enemy : Creature
     {
         private List<Player> _playerList;
 
@@ -22,22 +22,6 @@ namespace BoulderDashLibrary.Model
             _playerList.Add(player);
         }
 
-        public void Move()
-        {
-            if (CurrentSquare.LeftSquare.PlayObject is Player
-                || CurrentSquare.RightSquare.PlayObject is Player
-                || CurrentSquare.UpSquare.PlayObject is Player
-                || CurrentSquare.DownSquare.PlayObject is Player)
-            {
-                // dead. Blast radius is 3*3. Remove 3 items from the field.
-            }
-            else
-            {
-                if (CurrentSquare.PlayObject is FireFly)
-                {
-                    
-                }
-            }
-        }
+        public abstract void Move();
     }
 }

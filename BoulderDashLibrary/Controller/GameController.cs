@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Controller
@@ -11,7 +12,6 @@ namespace BoulderDashLibrary.Controller
         #region fields
         private FieldController _fieldController;
         private ViewController _viewController;
-        private object _testvar;
         #endregion
 
         #region properties
@@ -41,12 +41,23 @@ namespace BoulderDashLibrary.Controller
 
             do
             {
+                if (Level != 1)
+                {
+                    Task mytask = Task.Run(() =>
+                    {
+                        Thread.Sleep(200);
+
+                        // Move the enemy 5 times.
+                        for (int i = 0; i < 5; i++)
+                            _fieldController.GetEnemies().ForEach(e => e.Move());
+                    });
+                }
+
                 keyInfo = Console.ReadKey();
 
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        _testvar = _fieldController.GetPlayer().CanMove("Up").ToString(); // remove
                         _fieldController.GetPlayer().MoveToAbove();
                         _fieldController.UpdateField();
                         break;
