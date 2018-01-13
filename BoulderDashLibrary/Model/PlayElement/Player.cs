@@ -30,24 +30,59 @@ namespace BoulderDashLibrary.Model
             {
                 case "Right":
                     newSquare = CurrentSquare.RightSquare;
+
+                    if (newSquare.PlayObject is FireFly)
+                    {
+                        base.Die();
+
+                        return false;
+                    }
+
+                    if (CurrentSquare.RightSquare == null)
+                        return true;
                     break;
                 case "Left":
                     newSquare = CurrentSquare.LeftSquare;
+
+                    if (newSquare.PlayObject is FireFly)
+                    {
+                        base.Die();
+
+                        return false;
+                    }
+
+                    if (CurrentSquare.LeftSquare == null)
+                        return true;
                     break;
                 case "Up":
                     newSquare = CurrentSquare.UpSquare;
+                    if (newSquare.PlayObject is FireFly)
+                    {
+                        base.Die();
+
+                        return false;
+                    }
+
+                    if (newSquare == null || !(newSquare.PlayObject is Boulder) || !(newSquare.PlayObject is Wall))
+                        return true;
                     break;
                 case "Down":
                     newSquare = CurrentSquare.DownSquare;
-                    if (newSquare.PlayObject == null || !(newSquare.PlayObject is Boulder))
+                    if (newSquare.PlayObject is FireFly)
                     {
-                        
-                        return true;
+                        base.Die();
+
+                        return false;
                     }
+
+                    if (newSquare.PlayObject == null || !(newSquare.PlayObject is Boulder) 
+                        || !(newSquare.PlayObject is Wall))
+                        return true;
                     break;
                 default:
                     return false;
             }
+
             return false;
         }
     }
