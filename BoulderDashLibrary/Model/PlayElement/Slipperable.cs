@@ -13,9 +13,21 @@ namespace BoulderDashLibrary.Model
         public Slipperable(Square square, string name, Shapes shape) : base(square, name, shape)
         {
         }
+
         public void Fall()
         {
+            if (CanMove("Down"))
+            {
+                MoveToBenath();
+                return;
+            }
+            if (CurrentSquare.DownSquare.PlayObject is Slipperable)
+            {
+                if (CurrentSquare.DownSquare.RightSquare is AssetSquare)
+                {
 
+                }
+            }
         }
     }
 }

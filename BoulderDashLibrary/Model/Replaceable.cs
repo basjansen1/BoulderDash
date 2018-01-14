@@ -35,7 +35,7 @@ namespace BoulderDashLibrary.Model
                 default:
                     return false;
             }
-            if (requestedSquare.PlayObject == null || !(requestedSquare.PlayObject is Material))
+            if (requestedSquare.PlayObject == null)
             {
                 return true;
             }
@@ -45,7 +45,7 @@ namespace BoulderDashLibrary.Model
         public virtual void Destroy()
         {
             CurrentSquare.RemovePlayElement();
-           // CurrentSquare = null;
+         //   CurrentSquare = null; // coment out
         }
 
         public virtual bool MoveToAbove()

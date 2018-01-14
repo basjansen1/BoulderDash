@@ -63,6 +63,7 @@ namespace BoulderDashLibrary.Model
                     squareList.Add(CurrentSquare.RightSquare.DownSquare);
                 }
             }
+            squareList.Add(CurrentSquare);
 
             foreach(Square square in squareList)
             {
