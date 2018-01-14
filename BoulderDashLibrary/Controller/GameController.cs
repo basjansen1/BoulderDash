@@ -25,7 +25,7 @@ namespace BoulderDashLibrary.Controller
         {
             _fieldController = new FieldController();
             _viewController = new ViewController();
-            Level = 3;
+            Level = 2;
         }
 
         public void StartGame()
@@ -97,10 +97,14 @@ namespace BoulderDashLibrary.Controller
                 }
 
                 _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer());
-
-                Console.WriteLine("ELAPSED TIME: " + _elapsedTime);
             }
             while (!_fieldController.LevelCompleted() || !TimeIsUp());
+
+            if (TimeIsUp())
+            {
+                EndGame();
+                return;
+            }
 
             LevelFinished();
 
@@ -112,24 +116,19 @@ namespace BoulderDashLibrary.Controller
 
         private void GoToNextLevel()
         {
-            Console.WriteLine("Je gaat nu door naar Level " + Level);
+            _viewController.GoToNextLevel(Level);
+
             Level++;
             PrepareLevel();
         }
 
         private void LevelFinished()
         {
-            Console.Clear();
-            Console.WriteLine(string.Format("Je hebt Level {0} uitgespeeld", Level));
-
-            Console.WriteLine("Druk op een toets om door te gaan!");
-            Console.ReadKey();
+            _viewController.ShowLevelFinished(Level);
         }
 
         public void EndGame()
         {
-            Console.Clear();
-
             _viewController.ShowEndOfGame();
         }
 

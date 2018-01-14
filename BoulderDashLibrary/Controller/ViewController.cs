@@ -33,6 +33,7 @@ namespace BoulderDashLibrary.Controller
 
         public void ShowEndOfGame()
         {
+            Console.Clear();
             _gameView.PrintEndOfGame();
         }
 
@@ -44,6 +45,20 @@ namespace BoulderDashLibrary.Controller
         public void ShowPlayerStatistics(Player player)
         {
             _playerView.PrintScore();
+        }
+
+        public void ShowLevelFinished(int level)
+        {
+            Console.Clear();
+            Console.WriteLine(string.Format("Je hebt Level {0} uitgespeeld", level));
+
+            Console.WriteLine("Druk op een toets om door te gaan!");
+            Console.ReadKey();
+        }
+
+        public void GoToNextLevel(int level)
+        {
+            Console.WriteLine("Je gaat nu door naar Level " + level);
         }
     }
 }
