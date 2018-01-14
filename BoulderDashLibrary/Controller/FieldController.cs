@@ -50,6 +50,7 @@ namespace BoulderDashLibrary.Controller
 
         public bool LevelCompleted()
         {
+            if (GetPlayer().SatisFiedTask());
             return GetPlayer().SatisFiedTask();
         }
 

@@ -25,10 +25,10 @@ namespace BoulderDashLibrary.Controller
             _gameView.PrintStartOfGame();
         }
 
-        public void ShowGame(Square field, Player player, int time)
+        public void ShowGame(Square field, Player player, int time, int level)
         {
             _gameView.PrintField(field);
-            _playerView.PrintStatistics(player.Points, time);
+            _playerView.PrintStatistics(level, player.Points, time);
         }
 
         public void ShowEndOfGame()

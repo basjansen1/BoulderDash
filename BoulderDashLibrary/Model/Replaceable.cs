@@ -35,10 +35,8 @@ namespace BoulderDashLibrary.Model
                 default:
                     return false;
             }
-            if (requestedSquare.PlayObject == null || !(requestedSquare.PlayObject is Material))
-            {
+            if (requestedSquare.PlayObject == null)
                 return true;
-            }
             return false;
         }
 

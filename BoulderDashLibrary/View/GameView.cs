@@ -30,6 +30,7 @@ namespace BoulderDashLibrary.View
         public void PrintEndOfGame()
         {
             Console.Clear();
+            Console.WriteLine("Je tijd is opgeraakt of je hebt het spel uitgespeeld!");
             Console.WriteLine("Bedankt voor het spelen van Boulder Dash!\nWe zien je graag de volgende keer terug!\n");
             Console.WriteLine("Druk op een toets om het spel af te sluiten.....");
 
@@ -64,14 +65,12 @@ namespace BoulderDashLibrary.View
         {
             Console.Clear();
             Console.WriteLine(string.Format("Je hebt Level {0} uitgespeeld met {1} punten", level, points));
-
-            Console.WriteLine("Druk op een toets om door te gaan!");
-            Console.ReadKey();
         }
 
         public void NextLevel(int level)
         {
             Console.WriteLine("Je gaat nu door naar Level " + level);
+            Console.WriteLine("Om door te gaan naar level " + level + " moet je een toets indrukken\n\n\n");
         }
     }
 }

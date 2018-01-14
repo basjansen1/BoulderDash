@@ -31,6 +31,7 @@ namespace BoulderDashLibrary.Controller
         {
             _viewController.ShowStartOfGame();
             PrepareLevel();
+            _elapsedTime = 0;
             StartTimer();
             DoGame();
         }
@@ -55,12 +56,15 @@ namespace BoulderDashLibrary.Controller
 
         public void DoGame()
         {
-            _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer(), _elapsedTime);
+            _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer(), _elapsedTime, Level);
 
             ConsoleKeyInfo keyInfo;
 
             do
             {
+                if (_fieldController.LevelCompleted()) break;
+                if (TimeIsUp()) break;
+
                 keyInfo = Console.ReadKey();
                 
                 if (_fieldController.GetEnemies().Any())
@@ -95,7 +99,7 @@ namespace BoulderDashLibrary.Controller
                         break;
                 }
 
-                _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer(), _elapsedTime);
+                _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer(), _elapsedTime, Level);
             }
             while (!_fieldController.LevelCompleted() || !TimeIsUp());
 
@@ -118,7 +122,7 @@ namespace BoulderDashLibrary.Controller
             Level++;
             _viewController.GoToNextLevel(Level);
 
-            PrepareLevel();
+            StartGame();
         }
 
         private void LevelFinished()

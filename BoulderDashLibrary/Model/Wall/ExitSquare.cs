@@ -10,5 +10,9 @@ namespace BoulderDashLibrary.Model
 {
     public class ExitSquare : Square
     {
+        public ExitSquare()
+        {
+            _printShape = Shapes.E;
+        }
     }
 }
