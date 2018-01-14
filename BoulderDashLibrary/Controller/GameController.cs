@@ -12,7 +12,6 @@ namespace BoulderDashLibrary.Controller
         #region fields
         private FieldController _fieldController;
         private ViewController _viewController;
-        private System.Timers.Timer _timer;
         private int _elapsedTime;
         #endregion
 
@@ -25,7 +24,7 @@ namespace BoulderDashLibrary.Controller
         {
             _fieldController = new FieldController();
             _viewController = new ViewController();
-            Level = 2;
+            Level = 3;
         }
 
         public void StartGame()
@@ -38,7 +37,7 @@ namespace BoulderDashLibrary.Controller
 
         private void StartTimer()
         {
-            System.Threading.Timer t = new System.Threading.Timer(TimerCallBack, null, 0, 1000);
+            var timer = new System.Threading.Timer(TimerCallBack, null, 0, 1000);
         }
 
         private void TimerCallBack(object o)
