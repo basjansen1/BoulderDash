@@ -61,7 +61,7 @@ namespace BoulderDashLibrary.Model
                 AddGatherable((IGatherable)requestedSquare.PlayObject);
                 return true;
             }
-            else if (requestedSquare.PlayObject is Creature || requestedSquare.PlayObject is Wall)
+            else if (requestedSquare.PlayObject is Creature || requestedSquare.PlayObject is Wall || requestedSquare.PlayObject is Boulder)
             {
                 return false;
             }
