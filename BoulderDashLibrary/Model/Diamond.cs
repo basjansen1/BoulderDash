@@ -12,6 +12,7 @@ namespace BoulderDashLibrary.Model
     {
         public Diamond(Square square) : base(square, "Diamonds", Shapes.D)
         {
+            PlayerList = new List<Player>();
         }
 
         public int PointsWorth
@@ -21,12 +22,6 @@ namespace BoulderDashLibrary.Model
                 return 10;
             }
         }
-
-        public bool Gathered { get; set; }
-
-        public override bool CanMove(string direction)
-        {
-            throw new NotImplementedException();
-        }
+        public List<Player> PlayerList { get; set; }
     }
 }

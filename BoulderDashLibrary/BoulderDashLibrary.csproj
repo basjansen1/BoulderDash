@@ -47,7 +47,7 @@
     <Compile Include="Model\IDestructable.cs" />
     <Compile Include="Model\PlayGroundFactory.cs" />
     <Compile Include="Model\Squares\AssetSquare.cs" />
-    <Compile Include="Model\Wall\ExitWall.cs" />
+    <Compile Include="Model\Wall\ExitSquare.cs" />
     <Compile Include="Model\Wall\NormalWall.cs" />
     <Compile Include="Model\Wall\SteelWall.cs" />
     <Compile Include="Model\PlayElement\Creature.cs" />
@@ -74,6 +74,7 @@
     <Compile Include="View\GameView.cs" />
     <Compile Include="View\PlayerView.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -14,42 +14,33 @@ namespace BoulderDashLibrary.Model
         {
         }
 
-        public abstract bool CanMove(string direction);
+        public virtual bool CanMove(string direction)
+        {
+            Square requestedSquare = null;
 
-        //public virtual bool CanMove(string direction)
-        //{
-        //    switch (direction)
-        //    {
-        //        case "Right":
-        //            if (CurrentSquare.RightSquare.PlayObject == null)
-        //            {
-        //                return true;
-        //            }
-        //            break;
-        //        case "Left":
-        //            if (CurrentSquare.LeftSquare.PlayObject == null)
-        //            {
-        //                return true;
-        //            }
-        //            break;
-        //        case "Up":
-        //            if (CurrentSquare.UpSquare.PlayObject == null)
-        //            {
-        //                return true;
-        //            }
-        //            break;
-        //        case "Down":
-        //            if (CurrentSquare.DownSquare.PlayObject == null)
-        //            {
-        //                return true;
-        //            }
-        //            break;
-        //        default:
-        //            return false;
-        //    }
-
-        //    return false;
-        //}
+            switch (direction)
+            {
+                case "Right":
+                    requestedSquare = CurrentSquare.RightSquare;
+                    break;
+                case "Left":
+                    requestedSquare = CurrentSquare.LeftSquare;
+                    break;
+                case "Up":
+                    requestedSquare = CurrentSquare.UpSquare;
+                    break;
+                case "Down":
+                    requestedSquare = CurrentSquare.DownSquare;
+                    break;
+                default:
+                    return false;
+            }
+            if (requestedSquare.PlayObject == null || !(requestedSquare.PlayObject is Material))
+            {
+                return true;
+            }
+            return false;
+        }
 
         public virtual void Destroy()
         {

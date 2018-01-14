@@ -41,7 +41,7 @@ namespace BoulderDashLibrary.Controller
 
             do
             {
-                if (Level != 1)
+                if (_fieldController.GetEnemies().Any())
                 {
                     Task mytask = Task.Run(() =>
                     {

@@ -13,7 +13,6 @@ namespace BoulderDashLibrary.Model
         public Slipperable(Square square, string name, Shapes shape) : base(square, name, shape)
         {
         }
-
         public void Fall()
         {
 

@@ -9,6 +9,6 @@ namespace BoulderDashLibrary.Model
     public interface IGatherable
     {
         int PointsWorth { get;}
-        bool Gathered { get; set; }
+        List<Player> PlayerList { get; set; }
     }
 }
