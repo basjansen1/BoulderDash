@@ -33,26 +33,6 @@ namespace BoulderDashLibrary.Model
         // necassary for printing the field
         public Square FirstSquare;
 
-        public void PrintField() // replace this method to the view, used for testing 
-        {
-            //Square currentColumnSquare = FirstSquare;
-            //Square currentRowSquare = currentColumnSquare;
-
-            //while (currentColumnSquare != null)
-            //{
-            //    Console.Write(currentRowSquare.GetPrintShape());
-            //    if (currentRowSquare.RightSquare != null)
-            //    {
-            //        currentRowSquare = currentRowSquare.RightSquare;
-            //    } else
-            //    {
-            //        currentColumnSquare = currentColumnSquare.DownSquare;
-            //        currentRowSquare = currentColumnSquare;
-            //        Console.WriteLine();
-            //    }
-            //}
-        }
-
         public int GetTotalAvailablePoints
         {
             get
