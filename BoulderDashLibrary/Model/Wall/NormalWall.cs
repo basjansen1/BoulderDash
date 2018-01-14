@@ -8,10 +8,15 @@ using BoulderDashLibrary.Utils;
 
 namespace BoulderDashLibrary.Model
 {
-    public class NormalWall : Wall
+    public class NormalWall : Wall, IDestructable
     {
         public NormalWall(Square square) : base(square, "NormalWall", Shapes.W)
         {
+        }
+
+        public void Destroy()
+        {
+            CurrentSquare.RemovePlayElement();
         }
     }
 }

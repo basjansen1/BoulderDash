@@ -51,6 +51,11 @@ namespace BoulderDashLibrary.Controller
             return _field.FirstSquare;
         }
 
+        public bool LevelCompleted()
+        {
+            return GetPlayer().SatisFiedTask();
+        }
+
         public Player GetPlayer()
         {
             return _field.Player;

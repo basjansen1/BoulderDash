@@ -151,6 +151,7 @@ namespace BoulderDashLibrary.Model
                 {
                     IGatherable gatherable = (IGatherable)gatherableElement;
                     player.AddToCollectGatherable(gatherable);
+                    gatherable.AddPlayers(player);
                 }
             }
         }

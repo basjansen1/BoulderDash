@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace BoulderDashLibrary.Model
 {
-    public interface IGatherable
+    public interface IExplodable
     {
-        int PointsWorth { get;}
-        List<Player> PlayerList { get; set; }
-
-        void AddPlayers(Player player);
+        void Explode();
     }
 }

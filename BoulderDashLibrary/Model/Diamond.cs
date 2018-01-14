@@ -23,5 +23,10 @@ namespace BoulderDashLibrary.Model
             }
         }
         public List<Player> PlayerList { get; set; }
+
+        public void AddPlayers(Player player)
+        {
+            PlayerList.Add(player);
+        }
     }
 }

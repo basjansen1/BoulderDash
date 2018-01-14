@@ -7,7 +7,7 @@ using BoulderDashLibrary.Utils;
 
 namespace BoulderDashLibrary.Model.Squares
 {
-    public class AssetSquare : Square
+    public class AssetSquare : Square, IDestructable
     {
         public bool ContainsAsset { get; set; }
 
@@ -33,6 +33,16 @@ namespace BoulderDashLibrary.Model.Squares
             {
                 return PlayObject == null ? Shapes.X : PlayObject.Shape;
             }
+        }
+
+        public void Destroy()
+        {
+            if (PlayObject != null && PlayObject is IDestructable)
+            {
+                IDestructable destructable = (IDestructable)PlayObject;
+                destructable.Destroy();
+            }
+            PlayObject = null;
         }
     }
 }
