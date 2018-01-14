@@ -25,7 +25,7 @@ namespace BoulderDashLibrary.Controller
         {
             _fieldController = new FieldController();
             _viewController = new ViewController();
-            Level = 2;
+            Level = 3;
         }
 
         public void StartGame()
@@ -124,7 +124,7 @@ namespace BoulderDashLibrary.Controller
 
         private void LevelFinished()
         {
-            _viewController.ShowLevelFinished(Level);
+            _viewController.ShowLevelFinished(Level, _fieldController.GetPlayer().Points);
         }
 
         public void EndGame()
