@@ -32,6 +32,7 @@ namespace BoulderDashLibrary.Controller
         {
             _viewController.ShowStartOfGame();
             PrepareLevel();
+            StartTimer();
             DoGame();
         }
 
@@ -43,6 +44,14 @@ namespace BoulderDashLibrary.Controller
         private void TimerCallBack(object o)
         {
             _elapsedTime++;
+        }
+
+        private bool TimeIsUp()
+        {
+            if (Level == 1 || Level == 2)
+                return _elapsedTime >= 150;
+            else
+                return false;
         }
 
         public void DoGame()
@@ -88,8 +97,10 @@ namespace BoulderDashLibrary.Controller
                 }
 
                 _viewController.ShowGame(_fieldController.GetField(), _fieldController.GetPlayer());
+
+                Console.WriteLine("ELAPSED TIME: " + _elapsedTime);
             }
-            while (!_fieldController.LevelCompleted());
+            while (!_fieldController.LevelCompleted() || !TimeIsUp());
 
             LevelFinished();
 
