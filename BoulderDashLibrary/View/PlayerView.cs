@@ -13,7 +13,7 @@ namespace BoulderDashLibrary.View
 
         }
 
-        public void PrintScore()
+        public void PrintScore(int score)
         {
 
         }

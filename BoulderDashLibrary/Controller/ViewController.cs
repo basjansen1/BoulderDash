@@ -27,7 +27,7 @@ namespace BoulderDashLibrary.Controller
 
         public void ShowGame(Square field, Player player)
         {
-            _playerView.PrintScore();
+            _playerView.PrintScore(player.Points);
             _gameView.PrintField(field);
         }
 
@@ -42,15 +42,10 @@ namespace BoulderDashLibrary.Controller
             _gameView.PrintField(field);
         }
 
-        public void ShowPlayerStatistics(Player player)
-        {
-            _playerView.PrintScore();
-        }
-
-        public void ShowLevelFinished(int level)
+        public void ShowLevelFinished(int level, int points)
         {
             Console.Clear();
-            Console.WriteLine(string.Format("Je hebt Level {0} uitgespeeld", level));
+            Console.WriteLine(string.Format("Je hebt Level {0} uitgespeeld met {1} punten", level, points));
 
             Console.WriteLine("Druk op een toets om door te gaan!");
             Console.ReadKey();
