@@ -10,16 +10,37 @@ namespace BoulderDashLibrary.Model
 {
     public abstract class Player : Creature
     {
+        public List<IGatherable> ToGatherItemsList { get; set; }
+        public int Points { get; set; }
+
         public Player(Square square, string name, Shapes shape) : base(square, name, shape)
         {
             Points = 0;
+            ToGatherItemsList = new List<IGatherable>();
         }
 
-        public int Points { get; set; }
-
-        public void AddGatherable(IGatherable g)
+        public void CollectGatherable(IGatherable g)
         {
-            Points += g.PointsWorth;
+            if (ToGatherItemsList.Contains(g))
+            {
+                Points += g.PointsWorth;
+                ToGatherItemsList.Remove(g);
+            }
+        }
+
+        public void AddToCollectGatherable(IGatherable g)
+        {
+            ToGatherItemsList.Add(g);
+        }
+
+        public bool GatheredAllItems()
+        {
+            return ToGatherItemsList.Count() == 0;
+        }
+
+        public bool SatisFiedTask()
+        {
+            return GatheredAllItems() && CurrentSquare is ExitSquare;
         }
 
         public override bool CanMove(string direction)
@@ -58,12 +79,15 @@ namespace BoulderDashLibrary.Model
 
             if (requestedSquare.PlayObject is IGatherable)
             {
-                AddGatherable((IGatherable)requestedSquare.PlayObject);
+                CollectGatherable((IGatherable)requestedSquare.PlayObject);
                 return true;
             }
             else if (requestedSquare.PlayObject is Creature || requestedSquare.PlayObject is Wall || requestedSquare.PlayObject is Boulder)
             {
                 return false;
+            } else if (requestedSquare is ExitSquare)
+            {
+                return GatheredAllItems();
             }
 
             return true;

@@ -8,12 +8,7 @@ using BoulderDashLibrary.Utils;
 
 namespace BoulderDashLibrary.Model
 {
-    public class ExitWall : SteelWall
+    public class ExitSquare : Square
     {
-        public ExitWall(Square square) : base(square)
-        {
-            Shape = Shapes.E;
-            Name = "ExitWall";
-        }
     }
 }
