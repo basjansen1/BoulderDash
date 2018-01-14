@@ -14,40 +14,42 @@ namespace BoulderDashLibrary.Model
         {
         }
 
-        public virtual bool CanMove(string direction)
-        {
-            switch (direction)
-            {
-                case "Right":
-                    if (CurrentSquare.RightSquare.PlayObject == null)
-                    {
-                        return true;
-                    }
-                    break;
-                case "Left":
-                    if (CurrentSquare.LeftSquare.PlayObject == null)
-                    {
-                        return true;
-                    }
-                    break;
-                case "Up":
-                    if (CurrentSquare.UpSquare.PlayObject == null)
-                    {
-                        return true;
-                    }
-                    break;
-                case "Down":
-                    if (CurrentSquare.DownSquare.PlayObject == null)
-                    {
-                        return true;
-                    }
-                    break;
-                default:
-                    return false;
-            }
+        public abstract bool CanMove(string direction);
 
-            return false;
-        }
+        //public virtual bool CanMove(string direction)
+        //{
+        //    switch (direction)
+        //    {
+        //        case "Right":
+        //            if (CurrentSquare.RightSquare.PlayObject == null)
+        //            {
+        //                return true;
+        //            }
+        //            break;
+        //        case "Left":
+        //            if (CurrentSquare.LeftSquare.PlayObject == null)
+        //            {
+        //                return true;
+        //            }
+        //            break;
+        //        case "Up":
+        //            if (CurrentSquare.UpSquare.PlayObject == null)
+        //            {
+        //                return true;
+        //            }
+        //            break;
+        //        case "Down":
+        //            if (CurrentSquare.DownSquare.PlayObject == null)
+        //            {
+        //                return true;
+        //            }
+        //            break;
+        //        default:
+        //            return false;
+        //    }
+
+        //    return false;
+        //}
 
         public virtual void Destroy()
         {

@@ -13,5 +13,10 @@ namespace BoulderDashLibrary.Model
         public Boulder(Square square) : base(square, "Boulder", Shapes.B)
         {
         }
+
+        public override bool CanMove(string direction)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

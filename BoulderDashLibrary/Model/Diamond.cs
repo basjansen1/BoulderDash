@@ -23,5 +23,10 @@ namespace BoulderDashLibrary.Model
         }
 
         public bool Gathered { get; set; }
+
+        public override bool CanMove(string direction)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace BoulderDashLibrary.Controller
 
                         // Move the enemy 5 times.
                         for (int i = 0; i < 5; i++)
-                            _fieldController.GetEnemies().ForEach(e => e.Move());
+                            _fieldController.GetEnemies().ForEach(e => e.MoveToLeft());
                     });
                 }
 

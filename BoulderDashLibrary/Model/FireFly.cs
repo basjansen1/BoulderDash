@@ -14,6 +14,30 @@ namespace BoulderDashLibrary.Model
         {
         }
 
+        public override bool CanMove(string direction)
+        {
+            Square requestedSquare = null;
+
+            switch (direction)
+            {
+                case "Left":
+                    requestedSquare = CurrentSquare.LeftSquare;
+
+                    if (requestedSquare.PlayObject == null)
+                        return true;
+                    else
+                        return CanMove("Up");
+                case "Up":
+                    requestedSquare = CurrentSquare.UpSquare;
+
+                    if (requestedSquare.PlayObject == null)
+                        return true;                  
+                    break;
+            }
+
+            return false;
+        }
+
         public override void Move()
         {
             //if (CurrentSquare.LeftSquare.PlayObject is Player
@@ -25,8 +49,10 @@ namespace BoulderDashLibrary.Model
             //}
             //else
             //{
-                
-           //}
+
+            //}
+
+
         }
     }
 }
