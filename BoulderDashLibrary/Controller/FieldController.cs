@@ -28,16 +28,6 @@ namespace BoulderDashLibrary.Controller
             _field = new Field(level);
         }
 
-        public void UpdateField()
-        {
-            
-        }
-
-        public bool CheckGameOver()
-        {
-            return true;
-        }
-
         public List<Enemy> GetEnemies()
         {
            return _field.EnemieList;
@@ -50,7 +40,6 @@ namespace BoulderDashLibrary.Controller
 
         public bool LevelCompleted()
         {
-            if (GetPlayer().SatisFiedTask());
             return GetPlayer().SatisFiedTask();
         }
 

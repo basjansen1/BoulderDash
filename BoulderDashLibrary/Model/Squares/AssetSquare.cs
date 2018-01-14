@@ -41,6 +41,9 @@ namespace BoulderDashLibrary.Model.Squares
             {
                 IDestructable destructable = (IDestructable)PlayObject;
                 destructable.Destroy();
+            } else if (ContainsAsset)
+            {
+                ContainsAsset = false;
             }
             PlayObject = null;
         }

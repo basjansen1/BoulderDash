@@ -83,19 +83,15 @@ namespace BoulderDashLibrary.Controller
                 {
                     case ConsoleKey.UpArrow:
                         _fieldController.GetPlayer().MoveToAbove();
-                        _fieldController.UpdateField();
                         break;
                     case ConsoleKey.DownArrow:
                         _fieldController.GetPlayer().MoveToBenath();
-                        _fieldController.UpdateField();
                         break;
                     case ConsoleKey.LeftArrow:
                         _fieldController.GetPlayer().MoveToLeft();
-                        _fieldController.UpdateField();
                         break;
                     case ConsoleKey.RightArrow:
                         _fieldController.GetPlayer().MoveToRight();
-                        _fieldController.UpdateField();
                         break;
                 }
 
