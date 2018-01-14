@@ -56,5 +56,18 @@ namespace BoulderDashLibrary.Model
             //    }
             //}
         }
+
+        public int GetTotalAvailablePoints
+        {
+            get
+            {
+                int pointsWorth = 0;
+
+                foreach(var temp in ToGatherElementsList)
+                    pointsWorth += temp.PointsWorth;
+
+                return pointsWorth;
+            }
+        }
     }
 }

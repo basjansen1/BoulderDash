@@ -22,37 +22,24 @@ namespace BoulderDashLibrary.Model
             {
                 case "Left":
                     requestedSquare = CurrentSquare.LeftSquare;
-
-                    if (requestedSquare.PlayObject == null)
-                        return true;
-                    else
-                        return CanMove("Up");
+                    break;
                 case "Up":
-                    requestedSquare = CurrentSquare.UpSquare;
-
-                    if (requestedSquare.PlayObject == null)
-                        return true;                  
+                    requestedSquare = CurrentSquare.UpSquare;                
                     break;
             }
+
+            if (requestedSquare.PlayObject is Wall)
+                return false;
+            else if (requestedSquare.PlayObject == null)
+                return true;
 
             return false;
         }
 
         public override void Move()
         {
-            //if (CurrentSquare.LeftSquare.PlayObject is Player
-            //        || CurrentSquare.RightSquare.PlayObject is Player
-            //        || CurrentSquare.UpSquare.PlayObject is Player
-            //        || CurrentSquare.DownSquare.PlayObject is Player)
-            //{
-            //    // dead. Blast radius is 3*3. Remove 3 items from the field.
-            //}
-            //else
-            //{
-
-            //}
-
-
+            if (!MoveToLeft())
+                MoveToAbove();
         }
     }
 }

@@ -51,6 +51,15 @@ namespace BoulderDashLibrary.Controller
             return _field.FirstSquare;
         }
 
+        public bool LevelCompleted()
+        {
+            int totalAvailablePoints = _field.GetTotalAvailablePoints;
+
+            return GetPlayer().Points >= totalAvailablePoints;
+
+           // return GetPlayer()
+        }
+
         public Player GetPlayer()
         {
             return _field.Player;

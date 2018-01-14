@@ -23,13 +23,17 @@ namespace BoulderDashLibrary.View
             Console.WriteLine("Welkom bij het spel Boulder Dash.\nElk level moet binnen een bepaalde tijd worden afgerond!");
             Console.WriteLine("Voor level 1 en 2 is dit binnen 150 seconden");
             Console.WriteLine("Voor elke diamond die je verzamelt scoor je 10 punten, voor elke firefly die vernietigd wordt 250 punten.");
-            Console.WriteLine("Klik op enter om door te gaan...");
+            Console.WriteLine("Druk op een toets om door te gaan...");
             Console.ReadKey();
         }
 
         public void PrintEndOfGame()
         {
-            Console.WriteLine();
+            Console.WriteLine("Bedankt voor het spelen van Boulder Dash!\nWe zien je graag de volgende keer terug!\n");
+            Console.WriteLine("Druk op een toets om het spel af te sluiten.....");
+
+            Console.ReadKey();
+            Environment.Exit(0);
         }
 
         public void PrintField(Square square)
