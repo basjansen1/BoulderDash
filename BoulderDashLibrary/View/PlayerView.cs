@@ -8,19 +8,9 @@ namespace BoulderDashLibrary.View
 {
     public class PlayerView
     {
-        public void PrintAskInput()
+        public void PrintStatistics(int score, int timeLeft)
         {
-
-        }
-
-        public void PrintScore(int score)
-        {
-
-        }
-
-        public void PrintTime()
-        {
-
+            Console.WriteLine(string.Format("Je hebt in dit level een score van {0} en bent {1} seconden bezig", score, timeLeft));
         }
     }
 }
