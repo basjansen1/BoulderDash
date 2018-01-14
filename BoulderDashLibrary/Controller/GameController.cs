@@ -116,7 +116,7 @@ namespace BoulderDashLibrary.Controller
         private void GoToNextLevel()
         {
             Level++;
-            _viewController.GoToNextLevel(Level);
+            _viewController.ShowGoToNextLevel(Level);
 
             StartGame();
         }

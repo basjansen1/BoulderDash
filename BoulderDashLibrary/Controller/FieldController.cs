@@ -13,7 +13,6 @@ namespace BoulderDashLibrary.Controller
     {
         #region fields
         private Field _field;
-        private int _level;
         #endregion
 
         #region constructor and methods
@@ -24,7 +23,6 @@ namespace BoulderDashLibrary.Controller
 
         public void SetupField(int level)
         {
-            _level = level;
             _field = new Field(level);
         }
 

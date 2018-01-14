@@ -36,19 +36,14 @@ namespace BoulderDashLibrary.Controller
             _gameView.PrintEndOfGame();
         }
 
-        public void ShowField(Square field)
-        {
-            _gameView.PrintField(field);
-        }
-
         public void ShowLevelFinished(int level, int points)
         {
             _gameView.ShowLevelFinished(level, points);
         }
 
-        public void GoToNextLevel(int level)
+        public void ShowGoToNextLevel(int nextLevel)
         {
-            _gameView.NextLevel(level);
+            _gameView.NextLevel(nextLevel);
         }
     }
 }
