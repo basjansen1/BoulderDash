@@ -40,10 +40,7 @@ namespace BoulderDashLibrary.Controller
 
         public List<Enemy> GetEnemies()
         {
-            if (_level != 1)
-                return _field.EnemieList;
-            else
-                return null;
+           return _field.EnemieList;
         }
 
         public Square GetField()

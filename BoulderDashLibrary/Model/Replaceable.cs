@@ -45,7 +45,7 @@ namespace BoulderDashLibrary.Model
         public virtual void Destroy()
         {
             CurrentSquare.RemovePlayElement();
-            CurrentSquare = null;
+           // CurrentSquare = null;
         }
 
         public virtual bool MoveToAbove()

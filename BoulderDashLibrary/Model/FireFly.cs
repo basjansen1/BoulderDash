@@ -34,23 +34,21 @@ namespace BoulderDashLibrary.Model
                     break;
             }
 
-            if (requestedSquare.PlayObject is Material)
-                return false;
-            else if (requestedSquare is AssetSquare)
-            {
-                AssetSquare assetSquare = (AssetSquare)requestedSquare;
-                return !assetSquare.ContainsAsset;
-            } else if (requestedSquare.PlayObject == null)
-            {
-                return true;
-            } else if (requestedSquare.PlayObject is Rockford)
+            if (requestedSquare.PlayObject is Rockford)
             {
                 Rockford rockford = (Rockford)requestedSquare.PlayObject;
                 rockford.Explode();
                 rockford.Destroy();
-            } else if (requestedSquare.PlayObject is Slipperable)
+                Explode();
+                Destroy();
+                return true;
+            } else if (requestedSquare is AssetSquare)
             {
-                return false;
+                AssetSquare assetSquare = (AssetSquare)requestedSquare;
+                return !assetSquare.ContainsAsset;
+            } else if (requestedSquare is NormalSquare && requestedSquare.PlayObject == null)
+            {
+                return true;
             }
 
             return false;
