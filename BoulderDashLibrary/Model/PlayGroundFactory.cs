@@ -17,7 +17,6 @@ namespace BoulderDashLibrary.Model
             PlayElements["Players"] = new List<PlayElement>();
             PlayElements["Gatherables"] = new List<PlayElement>();
             PlayElements["Enemies"] = new List<PlayElement>();
-            PlayElements["Exits"] = new List<PlayElement>();
         }
         public Square CreatePlayGround(string[] rows)
         {
@@ -66,9 +65,7 @@ namespace BoulderDashLibrary.Model
                             PlayElements["Enemies"].Add(playElement);
                             break;
                         case 'E':
-                            currentSquare = new NormalSquare();
-                            playElement = new ExitWall(currentSquare);
-                            PlayElements["Exits"].Add(playElement);
+                            currentSquare = new ExitSquare();
                             break;
                         case ' ':
                             currentSquare = new NormalSquare();
@@ -84,6 +81,7 @@ namespace BoulderDashLibrary.Model
                 arrayIndex++;
             }
             AssignPlayersToEnemies();
+            AssignToCollectItemsToPlayers();
             AssignSideSquares(squares);
             return squares[0][0]; // return first square of the sequence
         }
@@ -140,6 +138,19 @@ namespace BoulderDashLibrary.Model
                 {
                     Enemy enemy = (Enemy)enemyElement;
                     enemy.AddPlayer(player);
+                }
+            }
+        }
+
+        private void AssignToCollectItemsToPlayers()
+        {
+            foreach (PlayElement playerElement in PlayElements["Players"])
+            {
+                Player player = (Player) playerElement;
+                foreach (PlayElement gatherableElement in PlayElements["Gatherables"])
+                {
+                    IGatherable gatherable = (IGatherable)gatherableElement;
+                    player.AddToCollectGatherable(gatherable);
                 }
             }
         }

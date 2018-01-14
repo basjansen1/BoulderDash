@@ -14,7 +14,7 @@ namespace BoulderDashLibrary.Model
         public List<IGatherable> ToGatherElementsList { get; set; }
         public List<Enemy> EnemieList { get; set; }
         public Player Player { get; set; }
-        public ExitWall ExitWall { get; set; }
+        public ExitSquare ExitWall { get; set; }
 
         public Field(int level)
         {
@@ -27,10 +27,6 @@ namespace BoulderDashLibrary.Model
             if (_playGroundFactory.PlayElements["Players"] != null)
             {
                 Player = (Player)_playGroundFactory.PlayElements["Players"].First();
-            }
-            if (_playGroundFactory.PlayElements["Exits"] != null)
-            {
-                ExitWall = (ExitWall)_playGroundFactory.PlayElements["Exits"].First();
             }
         }
 
