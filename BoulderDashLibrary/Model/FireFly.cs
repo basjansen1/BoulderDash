@@ -34,11 +34,11 @@ namespace BoulderDashLibrary.Model
                     break;
             }
 
-            if (requestedSquare.PlayObject is Rockford)
+            if (requestedSquare.PlayObject is Creature)
             {
-                Rockford rockford = (Rockford)requestedSquare.PlayObject;
-                rockford.Explode();
-                rockford.Destroy();
+                Creature creature = (Creature)requestedSquare.PlayObject;
+                creature.Explode();
+                creature.Destroy();
                 Explode();
                 Destroy();
                 return true;
