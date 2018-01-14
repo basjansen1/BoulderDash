@@ -47,7 +47,7 @@
     <Compile Include="Model\IDestructable.cs" />
     <Compile Include="Model\PlayGroundFactory.cs" />
     <Compile Include="Model\Squares\AssetSquare.cs" />
-    <Compile Include="Model\Wall\ExitWall.cs" />
+    <Compile Include="Model\Wall\ExitSquare.cs" />
     <Compile Include="Model\Wall\NormalWall.cs" />
     <Compile Include="Model\Wall\SteelWall.cs" />
     <Compile Include="Model\PlayElement\Creature.cs" />
