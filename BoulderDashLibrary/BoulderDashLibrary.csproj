@@ -45,6 +45,7 @@
     <Compile Include="Controller\ViewController.cs" />
     <Compile Include="Model\Boulder.cs" />
     <Compile Include="Model\IDestructable.cs" />
+    <Compile Include="Model\IExplodable.cs" />
     <Compile Include="Model\PlayGroundFactory.cs" />
     <Compile Include="Model\Squares\AssetSquare.cs" />
     <Compile Include="Model\Wall\ExitSquare.cs" />

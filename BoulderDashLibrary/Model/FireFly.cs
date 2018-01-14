@@ -23,15 +23,35 @@ namespace BoulderDashLibrary.Model
                 case "Left":
                     requestedSquare = CurrentSquare.LeftSquare;
                     break;
+                case "Right":
+                    requestedSquare = CurrentSquare.RightSquare;
+                    break;
                 case "Up":
                     requestedSquare = CurrentSquare.UpSquare;                
                     break;
+                case "Down":
+                    requestedSquare = CurrentSquare.DownSquare;
+                    break;
             }
 
-            if (requestedSquare.PlayObject is Wall)
+            if (requestedSquare.PlayObject is Material)
                 return false;
-            else if (requestedSquare.PlayObject == null)
+            else if (requestedSquare is AssetSquare)
+            {
+                AssetSquare assetSquare = (AssetSquare)requestedSquare;
+                return !assetSquare.ContainsAsset;
+            } else if (requestedSquare.PlayObject == null)
+            {
                 return true;
+            } else if (requestedSquare.PlayObject is Rockford)
+            {
+                Rockford rockford = (Rockford)requestedSquare.PlayObject;
+                rockford.Explode();
+                rockford.Destroy();
+            } else if (requestedSquare.PlayObject is Slipperable)
+            {
+                return false;
+            }
 
             return false;
         }
@@ -39,7 +59,15 @@ namespace BoulderDashLibrary.Model
         public override void Move()
         {
             if (!MoveToLeft())
-                MoveToAbove();
+            {
+                if (!MoveToAbove())
+                {
+                    if (!MoveToRight())
+                    {
+                        MoveToBenath();
+                    }
+                }
+            }
         }
     }
 }
