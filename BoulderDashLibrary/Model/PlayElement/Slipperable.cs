@@ -25,7 +25,7 @@ namespace BoulderDashLibrary.Model
             {
                 if (CurrentSquare.DownSquare.RightSquare is AssetSquare)
                 {
-
+                    //
                 }
             }
         }

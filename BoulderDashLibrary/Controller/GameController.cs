@@ -24,7 +24,7 @@ namespace BoulderDashLibrary.Controller
         {
             _fieldController = new FieldController();
             _viewController = new ViewController();
-            Level = 3;
+            Level = 2;
         }
 
         public void StartGame()
